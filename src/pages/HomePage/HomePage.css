@@ -1,0 +1,27 @@
+.homepage {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px 0;
+}
+
+.homepage_firstSection {
+    width: 100%;
+    
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homepage_firstSection_left {
+    width: 50%;
+}
+
+.homepage_firstSection_right {
+    width: 50%;
+}
