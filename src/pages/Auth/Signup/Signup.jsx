@@ -1,7 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
+
+import Image from '../../../assets/signup.svg'
 
 import './Signup.css';
 
@@ -10,27 +12,13 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-    const [quote, setQuote] = useState('');
-
-    useEffect(() => {
-        const fetchQuoteAndGif = async () => {
-            try {
-                const quoteResponse = await axios.get('https://api.quotable.io/random');
-                setQuote(`"${quoteResponse.data.content}" - ${quoteResponse.data.author}`);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchQuoteAndGif();
-    }, []);
 
     const navigate = useNavigate();
 
     const schema = yup.object().shape({
         name: yup.string().min(2, 'El nombre debe tener al menos 2 caracteres').required('El nombre es requerido'),
-        email: yup.string().min(2, 'El correo electrónico es requerido').matches(/\S+@(gmail|hotmail|outlook)\.(com|es)$/, 'El correo electrónico no es válido').required('El correo electrónico es requerido'),
-        password: yup.string().matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/, 'La contraseña debe tener entre 8 y 20 caracteres, una letra mayúscula, una minúscula, un número y un carácter especial').required('La contraseña es requerida'),
+        email: yup.string().matches(/\S+@(gmail|hotmail|outlook)\.(com|es)$/, 'El correo electrónico no es válido').required('El correo electrónico es requerido'),
+        password: yup.string().min(8).max(20).matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\\+])[A-Za-z\d@$!%*?&\\+]{8,20}$/, 'La contraseña debe tener entre 8 y 20 caracteres, una letra mayúscula, una minúscula, un número y un carácter especial').required('La contraseña es requerida'),
     });
 
     const handleSubmit = async (event) => {
@@ -55,6 +43,15 @@ const Signup = () => {
             try {
                 const response = await axios.post('http://localhost:3000/api/users/register', { name, email, password });
 
+                const ifUser = localStorage.getItem('user');
+                console.log(ifUser);
+
+                if (ifUser) {
+                    localStorage.removeItem('user');
+                }
+
+                localStorage.setItem('user', JSON.stringify(response.data.user));
+
                 console.log(response.data);
                 navigate('/verifyEmail');
             } catch (error) {
@@ -66,7 +63,9 @@ const Signup = () => {
     return (
         <div className="signup">
             <div className="signup_left">
-                <p className="signup_leftQuote">{quote}</p>
+                <p className="signup_leftTitle">¡Bienvenido a vitatri!</p>
+                <img className="signup_leftImage" src={Image} alt="signup" />
+                <p className="signup_leftQuote">Crea una cuenta y empieza a cuidar de tu salud.</p>
             </div>
             <div className="signup_right">
                 <div className="signup_rightContainer">

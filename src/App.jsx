@@ -7,6 +7,7 @@ import Us from './pages/Us/Us';
 
 import Signup from './pages/Auth/Signup/Signup';
 import Login from './pages/Auth/Login/Login';
+import VerifyEmail from './pages/Auth/VerifyEmail/VerifyEmail';
 
 function App() {
   return (
@@ -17,8 +18,10 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/us" element={<Us />} />
           <Route path="/contact" element={<Contact />} />
+
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/verifyEmail" element={<VerifyEmail />} />
         </Routes>
       </Router>
     </>
