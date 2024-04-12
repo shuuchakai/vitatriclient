@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Header() {
     const token = localStorage.getItem('token');
 
-    const isAuthenticated = token ? false : true;
+    const isAuthenticated = token ? true : false;
 
     return (
         <header className="header">

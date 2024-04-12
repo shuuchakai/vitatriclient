@@ -1,0 +1,87 @@
+.sidebar {
+    height: 100%;
+    width: 300px;
+
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    background-color: var(--secondary-color);
+}
+
+.sidebar_container {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.sidebar_containerTitle {
+    padding: 30px;
+    text-align: center;
+
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-color);
+
+    transition: 300ms ease-in-out;
+}
+
+.sidebar_containerTitle:hover {
+    margin-left: 7px;
+}
+
+.sidebar_containerTitleSpan {
+    color: var(--tertiary-color);
+}
+
+.sidebar_containerMenu {
+    padding: 15px;
+
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.sidebar_containerMenuItem {
+    padding: 15px;
+
+    display: flex;
+    gap: 5px;
+
+    font-size: 20px;
+    font-weight: 600;
+    fill: var(--primary-color);
+    color: var(--primary-color);
+
+    transition: 300ms ease-in-out;
+}
+
+.sidebar_containerMenuItem:hover {
+    margin-left: 5px;
+    color: var(--tertiary-color);
+    fill: var(--tertiary-color);
+}
+
+.sidebar_containerLogoutButton {
+    padding: 30px;
+
+    display: flex;
+    gap: 5px;
+
+    font-size: 20px;
+    font-weight: 600;
+    fill: var(--primary-color);
+    color: var(--primary-color);
+
+    transition: 300ms ease-in-out;
+}
+
+.sidebar_containerLogoutButton:hover {
+    margin-left: 5px;
+    color: var(--tertiary-color);
+    fill: var(--tertiary-color);
+}
