@@ -17,7 +17,7 @@ function DashboardProfile() {
             const { id } = user;
 
             if (!response) {
-                axios.post('http://localhost:3000/api/questions/get', { id_user: id })
+                axios.post(`https://vitatriserver-production.up.railway.app/api/questions/get`, { id_user: id })
                     .then(res => {
                         setResponse(res);
                         localStorage.setItem('response', JSON.stringify(res));
@@ -29,6 +29,7 @@ function DashboardProfile() {
     }, [user, response]);
 
     const data = response?.data[0];
+    console.log(data);
 
     return (
         <>
@@ -38,14 +39,32 @@ function DashboardProfile() {
                     <p className="dashboard_titleText">vitatri's<span>ccount</span></p>
                     <p className="profile_titleSubtext">Perfil</p>
                 </div>
-                <div className="profile_content">
-                    <div className="profile_contentTitle">{user.name}</div>
-                    <div className="profile_contentSubtitle">{data.gender}</div>
-                    <div className="profile_contentText">{data.age}</div>
-                    <div className="profile_contentText">{data.weight}</div>
-                    <div className="profile_contentText">{data.height}</div>
-                    <div className="profile_contentText">{data.sleep_hours}</div>
-                </div>
+                {data && (
+
+                    <div className="profile_contentContainer">
+                        
+                        <div className="profile_contentText">Edad: <span>{data.age}</span></div>
+                        <div className="profile_contentText">Peso: <span>{data.weight}</span>kg</div>
+                        <div className="profile_contentText">Altura: <span>{data.height}</span>cm</div>
+                        <div className="profile_contentText">Horas de sueño: <span>{data.sleep_hours}</span></div>
+                        <div className="profile_contentText">Meta principal: <span>{data.goal}</span></div>
+                        <div className="profile_contentText">Meta más específica: <span>{data.specific_goal}</span></div>
+                        <div className="profile_contentText">Actividad física: <span>{data.physical_activity}</span></div>
+                        <div className="profile_contentText">Tipo de sangre: <span>{data.blood_type}</span></div>
+                        <div className="profile_contentText">Alergias: <span>{data.allergies}</span></div>
+                        <div className="profile_contentText">Enfermedades: <span>{data.diseases}</span></div>
+                        <div className="profile_contentText">Medicamentos: <span>{data.medications}</span></div>
+                        <div className="profile_contentText">Preferencias: <span>{data.preferences}</span></div>
+                        <div className="profile_contentText">
+                            Qué días haces ejercicio y a que hora:
+                            {data.schedule.map((item, index) => (
+                                <div className="profile_contentText" key={index}>
+                                    <span>{item.day}</span> - <span>{item.time}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </main>
         </>
     )

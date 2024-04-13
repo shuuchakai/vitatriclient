@@ -46,9 +46,12 @@ const shoes = (
 
 function Sidebar() {
 
-    const handleLogout = () => {
+    const handleLogout = (e) => {
+        e.preventDefault();
+
         localStorage.removeItem('user');
         localStorage.removeItem('response');
+
         navigate('/login');
     }
 
@@ -61,11 +64,11 @@ function Sidebar() {
                 <div className="sidebar_containerMenu">
                     <Link to="/dashboard" className="sidebar_containerMenuItem">{home}Inicio</Link>
                     <Link to="/dashboard/food" className="sidebar_containerMenuItem">{food}Recetas</Link>
-                    <Link to="/dashboard/fitness" className="sidebar_containerMenuItem">{shoes}Ejercicio</Link>
-                    <Link to="/dashboard/stats" className="sidebar_containerMenuItem">{stats}Estadísticas</Link>
+                    {/* <Link to="/dashboard/fitness" className="sidebar_containerMenuItem">{shoes}Ejercicio</Link>
+                    <Link to="/dashboard/stats" className="sidebar_containerMenuItem">{stats}Estadísticas</Link> */}
                     <Link to="/dashboard/settings" className="sidebar_containerMenuItem">{profile}Perfil</Link>
                 </div>
-                <Link onClick={handleLogout} className="sidebar_containerLogoutButton">{logout}Cerrar sesión</Link>
+                <p onClick={handleLogout} className="sidebar_containerLogoutButton">{logout}Cerrar sesión</p>
             </div>
         </div>
     )

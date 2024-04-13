@@ -41,7 +41,7 @@ function Login() {
             setError(errors);
         } else {
             try {
-                const response = await axios.post('http://localhost:3000/api/users/login', { email, password });
+                const response = await axios.post(`https://vitatriserver-production.up.railway.app/api/users/login`, { email, password });
 
                 localStorage.setItem('user', JSON.stringify(response.data.user));
                 localStorage.setItem('token', response.data.token);

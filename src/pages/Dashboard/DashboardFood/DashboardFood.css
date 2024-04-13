@@ -21,9 +21,9 @@
 .food_container {
     width: 100%;
 
-    margin: 30px;
     padding: 30px;
 
+    gap: 30px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -68,4 +68,203 @@
 
 .food_container_button:hover {
     background-color: var(--primary-color);
+}
+
+.food_container_formContainer {
+    width: 100%;
+
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.food_container_formRow {
+    width: 900px;
+
+    margin: 20px;
+    padding: 20px;
+
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--tertiary-color);
+    border-bottom: 1px solid var(--tertiary-color);
+}
+
+.food_label {
+    font-size: 20px;
+    font-weight: 500;
+    text-wrap: balance;
+}
+
+.food_input {
+    padding: 10px;
+
+    align-items: center;
+
+    outline: none;
+    resize: vertical;
+    border: 1px solid var(--tertiary-color);
+}
+
+.food_ingredientsConatainer {
+    padding: 20px;
+
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.food_ingredientsContainer_title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.food_ingredientsContainer_content {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.food_ingredientsContainer_contentContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.food_ingredientsContainer_contentContainer_text {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.food_ingredientsContainer_contentContainer_textQuantity {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.food_title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.food_containerButton {
+    width: 100%;
+    height: 40px;
+
+    margin: 5px;
+
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    transition: 300ms ease-in-out;
+}
+
+.food_containerButton:hover {
+    background-color: var(--secondary-color);
+}
+
+.food_containerInput {
+    width: 100%;
+
+    margin: 5px;
+    padding: 10px;
+
+    outline: none;
+    resize: vertical;
+    border: 1px solid var(--tertiary-color);
+}
+
+.food_containerHour {
+    width: 100%;
+
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.food_miniLabelHour {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.food_containerInputHour {
+    width: 150px;
+
+    padding: 10px;
+    text-align: center;
+
+    outline: none;
+    border: 1px solid var(--tertiary-color);
+}
+
+.dietContainerTitle {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+.dietContainer {
+    width: 800px;
+
+    margin: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--tertiary-color);
+    box-shadow: 0 0 5px var(--tertiary-color);
+}
+
+.dietContainer_title {
+    padding: 30px;
+
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.dietContainer_subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.dietContainer_ingredients {
+    padding: 5px;
+
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dietContainer_ingredientsTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.dietContainer_ingredientsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dietContainerContainer {
+    padding: 30px;
+    border-top: 1px solid var(--tertiary-color);
 }

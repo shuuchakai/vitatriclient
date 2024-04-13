@@ -12,6 +12,7 @@ import VerifyEmail from './pages/Auth/VerifyEmail/VerifyEmail';
 import DashboardHome from './pages/Dashboard/DashboardHome/DashboardHome';
 import DashboardProfile from './pages/Dashboard/DashboardProfile/DashboardProfile';
 import DashboardFood from './pages/Dashboard/DashboardFood/DashboardFood';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <Router>
         <Routes>
           {/* General */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/us" element={<Us />} />
           <Route path="/contact" element={<Contact />} />

@@ -60,7 +60,7 @@ function DashboardHome() {
             console.log('Form values:', formValues);
 
             if (step === 6) {
-                const response = await axios.post('http://localhost:3000/api/questions/create', { ...formValues, user_id: user.id })
+                const response = await axios.post(`https://vitatriserver-production.up.railway.app/api/questions/create`, { ...formValues, user_id: user.id })
 
                 console.log('Response:', response);
                 if (response.status === 201) {
@@ -287,7 +287,7 @@ function DashboardHome() {
                                             </select>
                                         </div>
                                         <div className="dashboard_questionaryForm_inputContainer">
-                                            <label className="dashboard_questionaryLabel">¿Tienes alguna alergia?</label>
+                                            <label className="dashboard_questionaryLabel">¿Tienes alguna alergia? En caso de tener, especificar</label>
                                             <input
                                                 className="dashboard_questionaryInput"
                                                 type="text"
@@ -296,7 +296,7 @@ function DashboardHome() {
                                             />
                                         </div>
                                         <div className="dashboard_questionaryForm_inputContainer">
-                                            <label className="dashboard_questionaryLabel">¿Tienes alguna enfermedad?</label>
+                                            <label className="dashboard_questionaryLabel">¿Tienes alguna enfermedad? En caso de tener, especificar</label>
                                             <input
                                                 className="dashboard_questionaryInput"
                                                 type="text"
@@ -305,7 +305,7 @@ function DashboardHome() {
                                             />
                                         </div>
                                         <div className="dashboard_questionaryForm_inputContainer">
-                                            <label className="dashboard_questionaryLabel">¿Tomas algún medicamento?</label>
+                                            <label className="dashboard_questionaryLabel">¿Tomas algún medicamento? En caso de tomar, especificar</label>
                                             <input
                                                 className="dashboard_questionaryInput"
                                                 type="text"
@@ -323,7 +323,7 @@ function DashboardHome() {
                                     <>
                                         <p className="dashboard_questionaryForm_title">Hábitos:</p>
                                         <div className="dashboard_questionaryForm_inputContainer">
-                                            <label className="dashboard_questionaryLabel">¿Cuántos litros de agua consumes al día?</label>
+                                            <label className="dashboard_questionaryLabel">¿Cuántos cantidad de agua consumes al día?</label>
                                             <select
                                                 className="dashboard_questionaryInput"
                                                 value={formValues.water_intake_amount}
@@ -346,7 +346,6 @@ function DashboardHome() {
                                                 <option value="">Selecciona una opción</option>
                                                 <option value="vaso">vaso</option>
                                                 <option value="litro">litro</option>
-                                                <option value="mililitro">mililitro</option>
                                             </select>
                                         </div>
                                         <div className="dashboard_questionaryForm_inputContainer">

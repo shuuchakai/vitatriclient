@@ -76,12 +76,14 @@
 
     align-items: center;
 
+    outline: none;
     resize: vertical;
     border: 1px solid var(--tertiary-color);
 }
 
 .dashboard_questionaryInput:focus {
     border: 1px solid var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
 }
 
 .dashboard_questionaryInputCheck {

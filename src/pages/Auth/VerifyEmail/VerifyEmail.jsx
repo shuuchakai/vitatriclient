@@ -18,7 +18,7 @@ function VerifyEmail() {
         event.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:3000/api/users/confirm', { email: user.email, token });
+            const response = await axios.post(`https://vitatriserver-production.up.railway.app/api/users/confirm`, { email: user.email, token });
 
             localStorage.setItem('token', response.data.token);
 

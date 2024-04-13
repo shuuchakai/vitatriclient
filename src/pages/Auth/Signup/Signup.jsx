@@ -41,7 +41,7 @@ const Signup = () => {
             setError(errors);
         } else {
             try {
-                const response = await axios.post('http://localhost:3000/api/users/register', { name, email, password });
+                const response = await axios.post(`https://vitatriserver-production.up.railway.app/api/users/register`, { name, email, password });
 
                 const ifUser = localStorage.getItem('user');
                 console.log(ifUser);
@@ -53,7 +53,7 @@ const Signup = () => {
                 localStorage.setItem('user', JSON.stringify(response.data.user));
 
                 console.log(response.data);
-                navigate('/verifyEmail');
+                navigate('/dashboard');
             } catch (error) {
                 console.error(error);
             }
